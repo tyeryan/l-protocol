@@ -1,0 +1,18 @@
+syntax = "proto3";
+package errors;
+option go_package = "github.com/tyeryan/l-protocol/go/errors";
+
+message Caller {
+    string ServiceName = 1;
+    string FuncName = 2;
+    string FileName = 3;
+    int32 lineNum = 4;
+}
+message ErrorDetail {
+    string Stan = 1;
+    string Code = 2;
+    uint32 GrpcCode = 3;
+    string Desc = 4;
+    string Error = 5;
+    Caller CallerInfo = 6;
+} 
