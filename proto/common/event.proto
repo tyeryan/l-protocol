@@ -1,0 +1,31 @@
+syntax = "proto3";
+package common;
+
+option go_package = "github.com/tyeryan/l-protocol/go/common";
+
+message EventHeader {
+    string ID = 1;
+    string Type = 2;
+
+    string RootID = 3;
+    string RootType = 4;
+
+    string ParentID = 5;
+    string ParentType = 6;
+}
+
+message DLQHeader {
+    string Topic = 1;
+    int64 Partition = 2;
+    int64 Offset = 3;
+    string GroupID = 4;
+    map<string, string> Headers = 5;
+    int64 RetryCount = 10;
+}
+
+message EventReprocess {
+    string ID = 1;
+    string Topic = 2;
+    int64 Partition = 3;
+    int64 Offset = 4;
+}

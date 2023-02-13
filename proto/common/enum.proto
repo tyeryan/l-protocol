@@ -1,0 +1,72 @@
+syntax = "proto3";
+package common;
+
+option go_package = "github.com/tyeryan/l-protocol/go/common";
+
+enum ProductCategory {
+    UnknownCat = 0;
+    YouTrip = 1;
+}
+
+enum CardType {
+    UnKnownCardType = 0;
+    PC = 1;
+    NPC = 2;
+}
+
+enum ProgramType {
+    UnKnownProgramType = 0;
+    FIS = 1;
+}
+
+enum SMSStatus {
+    Unknown = 0;
+    Accepted = 1;
+    Queued = 2;
+    Sending = 3;
+    Sent = 4;
+    Receiving = 5;
+    Received = 6;
+    Delivered = 7;
+    Undelivered = 8;
+    Failed = 9;
+}
+
+enum TokenType {
+    UnknownTokenType = 0;
+    Bearer = 1;
+}
+
+
+enum ProductID {
+    UnknownProductID = 0;
+    THYouTrip = 1;
+    SGYouTrip = 2;
+}
+
+enum TokenGroup {
+    UnknownTokenGroup = 0;
+    OTPVerified = 1;
+    AppUnlocked = 2;
+}
+
+enum TicketType {
+    UnknownTicket = 0;
+    OrderCardTicket = 1;
+}
+
+enum SortingDirection {
+    Ascending = 0;
+    Descending = 1;
+}
+
+enum TerminationStatus {
+    TerminationStatus_Succeeded = 0;
+    TerminationStatus_Failed = 1;
+}
+
+enum FXTargetType {
+    UnknownFXTargetType = 0;
+    SELL = 1;
+    BUY = 2;
+}
