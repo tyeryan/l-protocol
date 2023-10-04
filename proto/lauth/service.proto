@@ -1,0 +1,20 @@
+syntax = "proto3";
+package lauth;
+
+option go_package = "github.com/tyeryan/l-protocol/go/lauth";
+
+message AuthReq {
+  string username = 1;
+  string password = 2;
+}
+// Define the AuthResponse message, which represents the response to an authentication request.
+message AuthRsp {
+  string token = 1;
+  string message = 2;
+}
+
+// Define the AuthService service.
+service AuthService {
+  // Authenticate a user based on the provided credentials.
+  rpc Authenticate(AuthReq) returns (AuthRsp);
+}

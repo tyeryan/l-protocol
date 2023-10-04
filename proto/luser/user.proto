@@ -1,0 +1,21 @@
+syntax = "proto3";
+package luser;
+
+option go_package = "github.com/tyeryan/l-protocol/go/luser";
+import "google/protobuf/timestamp.proto";
+
+
+message User  {
+  string MCC = 2;
+  string PhoneNumber = 3;
+  string Email = 4;
+  bool EmailVerified = 5;
+  string FirstName = 6;
+  string LastName = 7;
+  string DOB = 8;
+  string Nationality = 9;
+  string Language = 10;
+  string Gender = 11;
+  google.protobuf.Timestamp CreatedAt = 18;
+  google.protobuf.Timestamp UpdatedAt = 19;
+}

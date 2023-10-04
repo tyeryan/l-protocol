@@ -3,9 +3,11 @@ package luser;
 option go_package = "github.com/tyeryan/l-protocol/go/luser";
 
 import "google/protobuf/timestamp.proto";
+import "luser/user.proto";
 
 service LUser {
   rpc GetOrCreateNewUser (UserCreationReq) returns (UserCreationRsp) {}
+  rpc FindUserByUserID (FindUserByUserIDReq) returns (FindUserByUserIDRsp) {}
 }
 
 message UserCreationReq {
@@ -19,18 +21,14 @@ message UserCreationRsp {
   bool IsFound = 2;
 }
 
-
-message User  {
-  string MCC = 2;
-  string PhoneNumber = 3;
-  string Email = 4;
-  bool EmailVerified = 5;
-  string FirstName = 6;
-  string LastName = 7;
-  string DOB = 8;
-  string Nationality = 9;
-  string Language = 10;
-  string Gender = 11;
-  google.protobuf.Timestamp CreatedAt = 18;
-  google.protobuf.Timestamp UpdatedAt = 19;
+message FindUserByUserIDReq {
+  string UserID = 1;
 }
+
+message FindUserByUserIDRsp {
+  bool IsFound = 1;
+  User User = 2;
+}
+
+
+
