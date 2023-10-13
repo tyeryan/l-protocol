@@ -147,14 +147,14 @@ var file_lauth_service_proto_rawDesc = []byte{
 	0x39, 0x0a, 0x07, 0x41, 0x75, 0x74, 0x68, 0x52, 0x73, 0x70, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f,
 	0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e,
 	0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0x3d, 0x0a, 0x0b, 0x41, 0x75,
-	0x74, 0x68, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x2e, 0x0a, 0x0c, 0x41, 0x75, 0x74,
-	0x68, 0x65, 0x6e, 0x74, 0x69, 0x63, 0x61, 0x74, 0x65, 0x12, 0x0e, 0x2e, 0x6c, 0x61, 0x75, 0x74,
-	0x68, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x1a, 0x0e, 0x2e, 0x6c, 0x61, 0x75, 0x74,
-	0x68, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x52, 0x73, 0x70, 0x42, 0x28, 0x5a, 0x26, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x74, 0x79, 0x65, 0x72, 0x79, 0x61, 0x6e, 0x2f,
-	0x6c, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x2f, 0x6c, 0x61,
-	0x75, 0x74, 0x68, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0x37, 0x0a, 0x05, 0x4c, 0x41,
+	0x75, 0x74, 0x68, 0x12, 0x2e, 0x0a, 0x0c, 0x41, 0x75, 0x74, 0x68, 0x65, 0x6e, 0x74, 0x69, 0x63,
+	0x61, 0x74, 0x65, 0x12, 0x0e, 0x2e, 0x6c, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x41, 0x75, 0x74, 0x68,
+	0x52, 0x65, 0x71, 0x1a, 0x0e, 0x2e, 0x6c, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x41, 0x75, 0x74, 0x68,
+	0x52, 0x73, 0x70, 0x42, 0x28, 0x5a, 0x26, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x74, 0x79, 0x65, 0x72, 0x79, 0x61, 0x6e, 0x2f, 0x6c, 0x2d, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x63, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x2f, 0x6c, 0x61, 0x75, 0x74, 0x68, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -175,8 +175,8 @@ var file_lauth_service_proto_goTypes = []interface{}{
 	(*AuthRsp)(nil), // 1: lauth.AuthRsp
 }
 var file_lauth_service_proto_depIdxs = []int32{
-	0, // 0: lauth.AuthService.Authenticate:input_type -> lauth.AuthReq
-	1, // 1: lauth.AuthService.Authenticate:output_type -> lauth.AuthRsp
+	0, // 0: lauth.LAuth.Authenticate:input_type -> lauth.AuthReq
+	1, // 1: lauth.LAuth.Authenticate:output_type -> lauth.AuthRsp
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -243,74 +243,74 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// AuthServiceClient is the client API for AuthService service.
+// LAuthClient is the client API for LAuth service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type AuthServiceClient interface {
+type LAuthClient interface {
 	// Authenticate a user based on the provided credentials.
 	Authenticate(ctx context.Context, in *AuthReq, opts ...grpc.CallOption) (*AuthRsp, error)
 }
 
-type authServiceClient struct {
+type lAuthClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAuthServiceClient(cc grpc.ClientConnInterface) AuthServiceClient {
-	return &authServiceClient{cc}
+func NewLAuthClient(cc grpc.ClientConnInterface) LAuthClient {
+	return &lAuthClient{cc}
 }
 
-func (c *authServiceClient) Authenticate(ctx context.Context, in *AuthReq, opts ...grpc.CallOption) (*AuthRsp, error) {
+func (c *lAuthClient) Authenticate(ctx context.Context, in *AuthReq, opts ...grpc.CallOption) (*AuthRsp, error) {
 	out := new(AuthRsp)
-	err := c.cc.Invoke(ctx, "/lauth.AuthService/Authenticate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/lauth.LAuth/Authenticate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AuthServiceServer is the server API for AuthService service.
-type AuthServiceServer interface {
+// LAuthServer is the server API for LAuth service.
+type LAuthServer interface {
 	// Authenticate a user based on the provided credentials.
 	Authenticate(context.Context, *AuthReq) (*AuthRsp, error)
 }
 
-// UnimplementedAuthServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedAuthServiceServer struct {
+// UnimplementedLAuthServer can be embedded to have forward compatible implementations.
+type UnimplementedLAuthServer struct {
 }
 
-func (*UnimplementedAuthServiceServer) Authenticate(context.Context, *AuthReq) (*AuthRsp, error) {
+func (*UnimplementedLAuthServer) Authenticate(context.Context, *AuthReq) (*AuthRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Authenticate not implemented")
 }
 
-func RegisterAuthServiceServer(s *grpc.Server, srv AuthServiceServer) {
-	s.RegisterService(&_AuthService_serviceDesc, srv)
+func RegisterLAuthServer(s *grpc.Server, srv LAuthServer) {
+	s.RegisterService(&_LAuth_serviceDesc, srv)
 }
 
-func _AuthService_Authenticate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _LAuth_Authenticate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServiceServer).Authenticate(ctx, in)
+		return srv.(LAuthServer).Authenticate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/lauth.AuthService/Authenticate",
+		FullMethod: "/lauth.LAuth/Authenticate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).Authenticate(ctx, req.(*AuthReq))
+		return srv.(LAuthServer).Authenticate(ctx, req.(*AuthReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _AuthService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "lauth.AuthService",
-	HandlerType: (*AuthServiceServer)(nil),
+var _LAuth_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "lauth.LAuth",
+	HandlerType: (*LAuthServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Authenticate",
-			Handler:    _AuthService_Authenticate_Handler,
+			Handler:    _LAuth_Authenticate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
