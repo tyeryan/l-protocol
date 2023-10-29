@@ -54,6 +54,14 @@ func UseJSONLogger() {
 	LoggerConfig = zapcore.NewCore(zapcore.NewJSONEncoder(zapConfig), os.Stdout, logLevel)
 }
 
+// UseConsoleLogger log as plain text, can be used in development or unit test
+func UseConsoleLogger() {
+	zapConfig := zap.NewProductionEncoderConfig()
+	zapConfig.EncodeTime = zapcore.ISO8601TimeEncoder
+
+	LoggerConfig = zapcore.NewCore(zapcore.NewConsoleEncoder(zapConfig), os.Stdout, logLevel)
+}
+
 func EnableDebug() {
 	logLevel.SetLevel(zap.DebugLevel)
 }
